@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtCanvas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <div class="sidebar">
+            <h2>ArtCanvas</h2>
+            
+            <div class="section">
+                <h3>Tools</h3>
+                <div class="tool-grid">
+                    <button class="tool-btn active" data-tool="pen" title="Pen">✏️</button>
+                    <button class="tool-btn" data-tool="eraser" title="Eraser">🧹</button>
+                    <button class="tool-btn" data-tool="line" title="Line">📏</button>
+                    <button class="tool-btn" data-tool="rectangle" title="Rectangle">⬜</button>
+                    <button class="tool-btn" data-tool="circle" title="Circle">⭕</button>
+                    <button class="tool-btn" data-tool="text" title="Text">📝</button>
+                    <button class="tool-btn" data-tool="spray" title="Spray">💨</button>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Color</h3>
+                <input type="color" id="color" value="#000000">
+                <div class="color-palette">
+                    <div class="palette-color" style="background:#000000" data-color="#000000"></div>
+                    <div class="palette-color" style="background:#ffffff" data-color="#ffffff"></div>
+                    <div class="palette-color" style="background:#e53935" data-color="#e53935"></div>
+                    <div class="palette-color" style="background:#43a047" data-color="#43a047"></div>
+                    <div class="palette-color" style="background:#1e88e5" data-color="#1e88e5"></div>
+                    <div class="palette-color" style="background:#fdd835" data-color="#fdd835"></div>
+                    <div class="palette-color" style="background:#fb8c00" data-color="#fb8c00"></div>
+                    <div class="palette-color" style="background:#8e24aa" data-color="#8e24aa"></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Brush Size</h3>
+                <input type="range" id="size" min="1" max="50" value="3">
+                <label id="sizeLabel">3px</label>
+            </div>
+
+            <div class="section">
+                <h3>Opacity</h3>
+                <input type="range" id="opacity" min="0" max="100" value="100">
+                <label id="opacityLabel">100%</label>
+            </div>
+
+            <div class="section">
+                <h3>Options</h3>
+                <button id="fill" class="option-btn">Fill: Off</button>
+                <select id="bgColor" class="select-input">
+                    <option value="white">White BG</option>
+                    <option value="transparent">Transparent</option>
+                    <option value="black">Black BG</option>
+                    <option value="grid">Grid</option>
+                    <option value="dots">Dots</option>
+                    <option value="blueprint">Blueprint</option>
+                    <option value="cream">Cream</option>
+                    <option value="dark">Dark Gray</option>
+                </select>
+            </div>
+
+            <div class="section">
+                <h3>Actions</h3>
+                <button id="undo" class="action-btn">↶ Undo</button>
+                <button id="redo" class="action-btn">↷ Redo</button>
+                <button id="clear" class="action-btn danger">🗑️ Clear</button>
+                <button id="upload" class="action-btn">📁 Upload</button>
+                <button id="save" class="action-btn success">💾 Save PNG</button>
+                <button id="saveJpg" class="action-btn">📷 Save JPG</button>
+                <button id="load" class="action-btn">📂 Load</button>
+            </div>
+        </div>
+
+        <div class="canvas-area">
+            <canvas id="canvas"></canvas>
+        </div>
+    </div>
+    <input type="file" id="fileInput" accept="image/*" style="display:none">
+    <input type="text" id="tool" value="pen" style="display:none">
+    <script src="app.js"></script>
+</body>
+</html>
